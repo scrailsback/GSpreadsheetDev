@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://webservices" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns1="http://rpc.xml.coldfusion" xmlns:impl="http://webservices" targetNamespace="http://webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservices">
+      <xsd:import namespace="http://rpc.xml.coldfusion" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ImprovementInfo">
+        <xsd:sequence>
+          <xsd:element name="basementFinishedSquareFeet" nillable="true" type="xsd:string" />
+          <xsd:element name="basementSquareFeet" nillable="true" type="xsd:string" />
+          <xsd:element name="baths" nillable="true" type="xsd:string" />
+          <xsd:element name="bedrooms" nillable="true" type="xsd:string" />
+          <xsd:element name="builtAs" nillable="true" type="xsd:string" />
+          <xsd:element name="classDescr" nillable="true" type="xsd:string" />
+          <xsd:element name="condition" nillable="true" type="xsd:string" />
+          <xsd:element name="condoSquareFeet" nillable="true" type="xsd:string" />
+          <xsd:element name="exterior" nillable="true" type="xsd:string" />
+          <xsd:element name="foundation" nillable="true" type="xsd:string" />
+          <xsd:element name="garageSquareFeet" nillable="true" type="xsd:string" />
+          <xsd:element name="hvac" nillable="true" type="xsd:string" />
+          <xsd:element name="interior" nillable="true" type="xsd:string" />
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="occupancy" nillable="true" type="xsd:string" />
+          <xsd:element name="propertyType" nillable="true" type="xsd:string" />
+          <xsd:element name="quality" nillable="true" type="xsd:string" />
+          <xsd:element name="roofCover" nillable="true" type="xsd:string" />
+          <xsd:element name="roofType" nillable="true" type="xsd:string" />
+          <xsd:element name="rooms" nillable="true" type="xsd:string" />
+          <xsd:element name="squareFeet" nillable="true" type="xsd:string" />
+          <xsd:element name="status" nillable="true" type="xsd:double" />
+          <xsd:element name="stories" nillable="true" type="xsd:string" />
+          <xsd:element name="unitType" nillable="true" type="xsd:string" />
+          <xsd:element name="units" nillable="true" type="xsd:string" />
+          <xsd:element name="yearBuilt" nillable="true" type="xsd:string" />
+          <xsd:element name="yearRemodel" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_xsd_anyType">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:anyType[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuildingIds">
+        <xsd:sequence>
+          <xsd:element name="building" nillable="true" type="impl:ArrayOf_xsd_anyType" />
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="status" nillable="true" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Parcels">
+        <xsd:sequence>
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="parcel" nillable="true" type="impl:ArrayOf_xsd_anyType" />
+          <xsd:element name="status" nillable="true" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PropertyInfo">
+        <xsd:sequence>
+          <xsd:element name="accountType" nillable="true" type="xsd:string" />
+          <xsd:element name="address" nillable="true" type="xsd:string" />
+          <xsd:element name="city" nillable="true" type="xsd:string" />
+          <xsd:element name="lastSaleDate" nillable="true" type="xsd:string" />
+          <xsd:element name="lastSalePrice" nillable="true" type="xsd:double" />
+          <xsd:element name="legal" nillable="true" type="xsd:string" />
+          <xsd:element name="lotSize" nillable="true" type="xsd:double" />
+          <xsd:element name="mailAddress1" nillable="true" type="xsd:string" />
+          <xsd:element name="mailAddress2" nillable="true" type="xsd:string" />
+          <xsd:element name="mailCity" nillable="true" type="xsd:string" />
+          <xsd:element name="mailState" nillable="true" type="xsd:string" />
+          <xsd:element name="mailZipCode" nillable="true" type="xsd:string" />
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="ownerName1" nillable="true" type="xsd:string" />
+          <xsd:element name="ownerName2" nillable="true" type="xsd:string" />
+          <xsd:element name="parcelNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="scheduleNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="status" nillable="true" type="xsd:double" />
+          <xsd:element name="subdivDescr" nillable="true" type="xsd:string" />
+          <xsd:element name="subdivId" nillable="true" type="xsd:string" />
+          <xsd:element name="zipCode" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rpc.xml.coldfusion">
+      <xsd:import namespace="http://webservices" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="CFCInvocationException">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPropertyInfoRequest">
+    <wsdl:part name="scheduleNum" type="xsd:string" />
+    <wsdl:part name="parcelNum" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildingIdsResponse">
+    <wsdl:part name="GetBuildingIdsReturn" type="impl:BuildingIds" />
+  </wsdl:message>
+  <wsdl:message name="GetParcelsPerAddressRequest">
+    <wsdl:part name="streetNum" type="xsd:string" />
+    <wsdl:part name="streetDir" type="xsd:string" />
+    <wsdl:part name="streetName" type="xsd:string" />
+    <wsdl:part name="city" type="xsd:string" />
+    <wsdl:part name="streetNameSearchType" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildingIdsRequest">
+    <wsdl:part name="scheduleNum" type="xsd:string" />
+    <wsdl:part name="parcelNum" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="CFCInvocationException">
+    <wsdl:part name="fault" type="tns1:CFCInvocationException" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyInfoResponse">
+    <wsdl:part name="GetPropertyInfoReturn" type="impl:PropertyInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetParcelsPerAddressResponse">
+    <wsdl:part name="GetParcelsPerAddressReturn" type="impl:Parcels" />
+  </wsdl:message>
+  <wsdl:message name="GetImprovementsRequest">
+    <wsdl:part name="scheduleNum" type="xsd:string" />
+    <wsdl:part name="parcelNum" type="xsd:string" />
+    <wsdl:part name="buildingId" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetImprovementsResponse">
+    <wsdl:part name="GetImprovementsReturn" type="impl:ImprovementInfo" />
+  </wsdl:message>
+  <wsdl:portType name="PropertyInformation">
+    <wsdl:operation name="GetImprovements" parameterOrder="scheduleNum parcelNum buildingId">
+      <wsdl:input name="GetImprovementsRequest" message="impl:GetImprovementsRequest" />
+      <wsdl:output name="GetImprovementsResponse" message="impl:GetImprovementsResponse" />
+      <wsdl:fault name="CFCInvocationException" message="impl:CFCInvocationException" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingIds" parameterOrder="scheduleNum parcelNum">
+      <wsdl:input name="GetBuildingIdsRequest" message="impl:GetBuildingIdsRequest" />
+      <wsdl:output name="GetBuildingIdsResponse" message="impl:GetBuildingIdsResponse" />
+      <wsdl:fault name="CFCInvocationException" message="impl:CFCInvocationException" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParcelsPerAddress" parameterOrder="streetNum streetDir streetName city streetNameSearchType">
+      <wsdl:input name="GetParcelsPerAddressRequest" message="impl:GetParcelsPerAddressRequest" />
+      <wsdl:output name="GetParcelsPerAddressResponse" message="impl:GetParcelsPerAddressResponse" />
+      <wsdl:fault name="CFCInvocationException" message="impl:CFCInvocationException" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyInfo" parameterOrder="scheduleNum parcelNum">
+      <wsdl:input name="GetPropertyInfoRequest" message="impl:GetPropertyInfoRequest" />
+      <wsdl:output name="GetPropertyInfoResponse" message="impl:GetPropertyInfoResponse" />
+      <wsdl:fault name="CFCInvocationException" message="impl:CFCInvocationException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PropertyInformation.cfcSoapBinding" type="impl:PropertyInformation">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="GetImprovements">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="GetImprovementsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="GetImprovementsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CFCInvocationException">
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="GetBuildingIdsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="GetBuildingIdsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CFCInvocationException">
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetParcelsPerAddress">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="GetParcelsPerAddressRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="GetParcelsPerAddressResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CFCInvocationException">
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyInfo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="GetPropertyInfoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="GetPropertyInfoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="CFCInvocationException">
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="http://webservices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PropertyInformation">
+    <wsdl:port name="PropertyInformation.cfc" binding="impl:PropertyInformation.cfcSoapBinding">
+      <wsdlsoap:address location="http://www.larimer.org/webservices/PropertyInformation.cfc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
